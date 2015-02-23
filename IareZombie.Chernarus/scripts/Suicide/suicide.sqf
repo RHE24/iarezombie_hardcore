@@ -1,0 +1,15 @@
+private ["_Secondary"];
+ canAbort = true;
+ _Secondary = currentWeapon player;
+ player addEventHandler ["fired", {if (alive player) then { player SetDamage 1.1;};}];
+ cutText [format["You have run out of options ... 10 Seconds"], "PLAIN DOWN"];
+ sleep 4;
+ cutText [format["what else can you do? ... 6 Seconds"], "PLAIN DOWN"];
+ sleep 4;
+ cutText [format["better to die than be eaten by zombies ... 2 Seconds"], "PLAIN DOWN"];
+ sleep 2;
+ cutText [format["Hopefully, I become a zombie and avenge my death!"], "PLAIN DOWN"];
+ canAbort = false;
+ player playmove "ActsPercMstpSnonWpstDnon_suicide1B";
+ sleep 8.4;
+ player fire _Secondary;
