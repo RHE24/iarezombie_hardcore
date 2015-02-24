@@ -14,47 +14,15 @@ PVDZE_serverObjectMonitor set [count PVDZE_serverObjectMonitor,_box];
 
 clearWeaponCargoGlobal _box;
 clearMagazineCargoGlobal _box;
+_pistolselect = [["M9SD","15Rnd_9x19_M9SD"],["RH_Deagleg","RH_7Rnd_50_AE"],["DDOPP_X3_b","DDOPP_3Rnd_X3"],["RH_bull","RH_6Rnd_44_Mag"],["RH_browninghp","RH_13Rnd_9x19_bhp"],["RH_mk22sd","RH_8Rnd_9x19_Mksd"],["RH_muzi","RH_32Rnd_9x19_Muzi"]] call BIS_fnc_selectRandom;
+_weaponselect = [["DMR_DZ","20Rnd_762x51_DMR"],["BAF_LRR_scoped","5Rnd_86x70_L115A1"],["M110_NVG_EP1","5Rnd_86x70_L115A1"],["FHQ_RSASS_TAN","FHQ_rem_20Rnd_762x51_PMAG_NT"],["FHQ_RSASS_TWS_SD_TAN","FHQ_rem_20Rnd_762x51_PMAG_NT"],["FHQ_XM2010_SD_DESERT","FHQ_rem_5Rnd_300Win_XM2010_NT_SD"],["vil_SVD_S","10Rnd_762x54_SVD"]] call BIS_fnc_selectRandom;
+_magselect = [["20Rnd_762x51_B_SCAR"],["15Rnd_9x19_M9SD"],["5Rnd_86x70_L115A1"],["FHQ_rem_20Rnd_762x51_PMAG_NT"],["FHQ_rem_5Rnd_300Win_XM2010_NT"],["FHQ_rem_5Rnd_300Win_XM2010_NT_SD"],["10Rnd_762x54_SVD"]] call BIS_fnc_selectRandom;
 
-switch (random 4) do {
-case 0: {
-_box addWeaponCargoGlobal ["DMR_DZ", 2];
-_box addWeaponCargoGlobal ["M9SD", 1];
-_box addMagazineCargoGlobal ["15Rnd_9x19_M9SD", 20];
-_box addMagazineCargoGlobal ["20Rnd_762x51_DMR", 20];
-};
-
-case 1: {
-_box addWeaponCargoGlobal ["BAF_LRR_scoped", 1];
-_box addWeaponCargoGlobal ["M9SD", 2];
-_box addMagazineCargoGlobal ["15Rnd_9x19_M9SD", 10];
-_box addMagazineCargoGlobal ["5Rnd_86x70_L115A1", 5];
-_box addMagazineCargoGlobal ["20Rnd_762x51_B_SCAR", 5];
-// BACKPACKS
-_box addBackpackCargoGlobal ["DZ_LargeGunBag_EP1", 2]; 
-};
-	case 2: {
-_box addWeaponCargoGlobal ["M110_NVG_EP1", 1];
-_box addWeaponCargoGlobal ["M9SD", 2];
-_box addMagazineCargoGlobal ["15Rnd_9x19_M9SD", 5];
-_box addMagazineCargoGlobal ["5Rnd_86x70_L115A1", 5];
-_box addMagazineCargoGlobal ["20Rnd_762x51_B_SCAR", 5];
-// CLOTHING
-_box addMagazineCargoGlobal ["Skin_Sniper1_DZ", 2];
-};
-
-case 3: {
-_box addWeaponCargoGlobal ["BAF_LRR_scoped", 1];
-_box addWeaponCargoGlobal ["M110_NVG_EP1", 1];
-_box addWeaponCargoGlobal ["M9SD", 2];
-_box addMagazineCargoGlobal ["15Rnd_9x19_M9SD", 20];
-_box addMagazineCargoGlobal ["5Rnd_86x70_L115A1", 5];
-_box addMagazineCargoGlobal ["20Rnd_762x51_B_SCAR", 5];
-// CLOTHING
+_box addWeaponCargoGlobal [_pistolselect select 0, 1];
+_box addWeaponCargoGlobal [_weaponselect select 0, 1];
+_box addMagazineCargoGlobal [_magselect select 0, ((random 20)+ 3)];
 _box addMagazineCargoGlobal ["Skin_Sniper1_DZ", 1];
-// BACKPACKS
-_box addBackpackCargoGlobal ["DZ_LargeGunBag_EP1", 2]; 
-};
-};
+_box addBackpackCargoGlobal ["DZ_LargeGunBag_EP1", 1]; 
 
 //----------------------------------------------------------------------------         
  
